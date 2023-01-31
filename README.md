@@ -1,4 +1,4 @@
-[![Hex.pm Version](http://img.shields.io/hexpm/v/blake3.svg?style=flat)](https://hex.pm/packages/blake3)
+[![Hex.pm Version](http://img.shields.io/hexpm/v/blake3_ex.svg?style=flat)](https://hex.pm/packages/blake3_ex)
 
 # Blake3
 
@@ -7,12 +7,12 @@ These bindings use [`:rustler`](https://github.com/rusterlium/rustler) to connec
 
 ## Installation
 
-The package can be installed by adding `blake3` to your list of dependencies in `mix.exs`:
+The package can be installed by adding `blake3_ex` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
   [
-    {:blake3, "~> 0.0.0+development"}
+    {:blake3_ex, "~> 0.0.0+development"}
   ]
 end
 ```
@@ -31,7 +31,7 @@ export BLAKE3_RAYON=true
 or
 
 ```elixir
-config :blake3,
+config :blake3_ex,
    simd_mode: :neon,
    rayon: :true
 ```
@@ -59,4 +59,4 @@ When changing configuration you will need to call `mix deps.compile` to enable t
 We follow Rustler itself, supporting latest three minor Elixir versions and major OTP versions.
 As for Rust itself, we only support stable.
 
-Documentation can found at [https://hexdocs.pm/blake3](https://hexdocs.pm/blake3).
+Documentation can found at [https://hexdocs.pm/blake3_ex](https://hexdocs.pm/blake3_ex).

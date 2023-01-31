@@ -3,7 +3,7 @@ defmodule MixBlake3.Project do
 
   def project do
     [
-      app: :blake3,
+      app: :blake3_ex,
       version: "0.0.0+development",
       elixir: "~> 1.9",
       build_embedded: Mix.env() == :prod,
@@ -44,7 +44,7 @@ defmodule MixBlake3.Project do
 
   def config_features() do
     simd =
-      case Application.get_env(:blake3, :simd_mode) || System.get_env("BLAKE3_SIMD_MODE") do
+      case Application.get_env(:blake3_ex, :simd_mode) || System.get_env("BLAKE3_SIMD_MODE") do
         "c_neon" -> "neon"
         :c_neon -> "neon"
         "neon" -> "neon"
@@ -53,7 +53,7 @@ defmodule MixBlake3.Project do
       end
 
     rayon =
-      if !is_nil(Application.get_env(:blake3, :rayon) || System.get_env("BLAKE3_RAYON")) do
+      if !is_nil(Application.get_env(:blake3_ex, :rayon) || System.get_env("BLAKE3_RAYON")) do
         "rayon"
       else
         nil
